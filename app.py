@@ -35,7 +35,7 @@ def recursive_search(list, target, low, high):
             return recursive_search(list, target, low, mid-1)
 
 
-list = [1,2,3,4,5,6]
+list = [1,2,3,4,5,6,7,8,9,23,24,45]
 target = 1
 
 print(recursive_search(list, target, 0, len(list)-1))
