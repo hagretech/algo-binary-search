@@ -20,8 +20,23 @@ def iterative_search(list, target):
             high = mid -1
 
     return False
-list = [1,2,3,4,5]
-target = 6
 
-print(iterative_search(list, target))
+# recursive binary search
+def recursive_search(list, target, low, high):
+    if low > high:
+        return False
+    else:
+        mid = (low + high) // 2
+        if list[mid] == target:
+            return True
+        elif list[mid] < target:
+            return recursive_search(list, target, mid+1, high)
+        else:
+            return recursive_search(list, target, low, mid-1)
+
+
+list = [1,2,3,4,5,6]
+target = 1
+
+print(recursive_search(list, target, 0, len(list)-1))
 
